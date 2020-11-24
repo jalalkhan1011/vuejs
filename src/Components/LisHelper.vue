@@ -4,23 +4,126 @@
 <!--    <slot name="mylist"></slot>-->
 <!--    <slot name="para"></slot>-->
 <!--    <slot name="other">Loading....</slot>-->
-    <form>
-      <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+
+      <form>
+        <div class="row">
+          <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+            <h1>From Handeling</h1>
+            <hr>
+            <div class="form-group">
+              <label for="email">Mail</label>
+              <input
+                  type="text"
+                  id="email"
+                  class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input
+                  type="password"
+                  id="password"
+                  class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="age">Age</label>
+              <input
+                  type="number"
+                  id="age"
+                  class="form-control">
+            </div>
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-group">
+            <label for="message">Message</label><br>
+
+            <textarea
+                id="message"
+                rows="5"
+                class="form-control">
+                    </textarea>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+            <div class="form-group">
+              <label for="sendmail">
+                <input
+                    type="checkbox"
+                    id="sendmail"
+                    value="SendMail"> Send Mail
+              </label>
+              <label for="sendInfomail">
+                <input
+                    type="checkbox"
+                    id="sendInfomail"
+                    value="SendInfoMail"> Send Infomail
+              </label>
+            </div>
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 form-group">
+            <label for="male">
+              <input
+                  type="radio"
+                  id="male"
+                  value="Male"> Male
+            </label>
+            <label for="female">
+              <input
+                  type="radio"
+                  id="female"
+                  value="Female"> Female
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 from-group">
+            <label for="priority">Priority</label>
+            <select
+                id="priority"
+                class="form-control">
+              <option></option>
+            </select>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+            <button
+                class="btn btn-primary">Submit!
+            </button>
+          </div>
+        </div>
+      </form>
+      <hr>
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4>Your Data</h4>
+            </div>
+            <div class="panel-body">
+              <p>Mail:</p>
+              <p>Password:</p>
+              <p>Age:</p>
+              <p>Message: </p>
+              <p><strong>Send Mail?</strong></p>
+              <ul>
+                <li></li>
+              </ul>
+              <p>Gender:</p>
+              <p>Priority:</p>
+              <p>Switched:</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-      </div>
-      <div class="form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-      </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-  </div>
+    </div>
+
 </template>
 <script>
 export default {
