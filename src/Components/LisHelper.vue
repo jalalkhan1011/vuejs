@@ -15,21 +15,21 @@
               <input
                   type="text"
                   id="email"
-                  class="form-control">
+                  class="form-control" v-model="userData.email">
             </div>
             <div class="form-group">
               <label for="password">Password</label>
               <input
                   type="password"
                   id="password"
-                  class="form-control">
+                  class="form-control" v-model="userData.password">
             </div>
             <div class="form-group">
               <label for="age">Age</label>
               <input
                   type="number"
                   id="age"
-                  class="form-control">
+                  class="form-control" v-model="userData.age">
             </div>
 
           </div>
@@ -41,7 +41,7 @@
             <textarea
                 id="message"
                 rows="5"
-                class="form-control">
+                class="form-control" v-model="message">
                     </textarea>
           </div>
         </div>
@@ -52,13 +52,13 @@
                 <input
                     type="checkbox"
                     id="sendmail"
-                    value="SendMail"> Send Mail
+                    value="SendMail" v-model="sendMail"> Send Mail
               </label>
               <label for="sendInfomail">
                 <input
                     type="checkbox"
                     id="sendInfomail"
-                    value="SendInfoMail"> Send Infomail
+                    value="SendInfoMail" v-model="sendMail"> Send Infomail
               </label>
             </div>
 
@@ -70,13 +70,13 @@
               <input
                   type="radio"
                   id="male"
-                  value="Male"> Male
+                  value="Male" v-model="gender"> Male
             </label>
             <label for="female">
               <input
                   type="radio"
                   id="female"
-                  value="Female"> Female
+                  value="Female" v-model="gender"> Female
             </label>
           </div>
         </div>
@@ -85,8 +85,10 @@
             <label for="priority">Priority</label>
             <select
                 id="priority"
-                class="form-control">
-              <option></option>
+                class="form-control" v-model="selectedPriorities">
+              <option v-for="priority in priorities" :key="priority">
+                {{ priority }}
+              </option>
             </select>
           </div>
         </div>
@@ -94,29 +96,31 @@
         <div class="row">
           <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
             <button
-                class="btn btn-primary">Submit!
+                class="btn btn-primary" @click.prevent="submitted">Submit!
             </button>
           </div>
         </div>
       </form>
       <hr>
-      <div class="row">
+      <div class="row" v-if="isSelected">
         <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
           <div class="panel panel-default">
             <div class="panel-heading">
               <h4>Your Data</h4>
             </div>
             <div class="panel-body">
-              <p>Mail:</p>
-              <p>Password:</p>
-              <p>Age:</p>
-              <p>Message: </p>
+              <p>Mail:{{ userData.email }}</p>
+              <p>Password:{{ userData.password }}</p>
+              <p>Age:{{ userData.age }}</p>
+              <p style="white-space: pre-line">Message:{{ message }} </p>
               <p><strong>Send Mail?</strong></p>
               <ul>
-                <li></li>
+                <li v-for="mail in sendMail" :key="mail">
+                  {{mail}}
+                </li>
               </ul>
-              <p>Gender:</p>
-              <p>Priority:</p>
+              <p>Gender:{{ gender }}</p>
+              <p>Priority: {{ selectedPriorities }}</p>
               <p>Switched:</p>
             </div>
           </div>
@@ -129,13 +133,30 @@
 export default {
   data(){
     return{
+          userData:{
+            email:'',
+            password:'',
+            age: 0
+          },
+          message:'',
+          sendMail:[],
+          gender:'Male',
+          selectedPriorities:'',
+          priorities:['High','Medium','Low'],
+          isSelected: false
 
+        }
+    },
+    methods:{
+        submitted(){
+          this.isSelected = true
+        }
     }
   }
-}
 </script>
 <style scoped>
 ul li{
-  color: darkgoldenrod;
+  /*color: darkgoldenrod;*/
+  list-style-type: none;
 }
 </style>
