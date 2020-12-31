@@ -6,7 +6,7 @@ export const routes =[
         component: compHome
     },
     {
-        path:'/customer',
+        path:'/customer/:id',
         component: compCustomer
     }
 ];
