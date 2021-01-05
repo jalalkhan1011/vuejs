@@ -43,6 +43,12 @@ export default {
       this.$router.push('/')
       // this.$router.push({name:'home'})
     }
+  },
+  beforeRouteEnter (to, from, next) {
+    next(true);
+  },
+  beforeRouteLeave(to,form,next){
+    next(false);
   }
 }
 </script>
