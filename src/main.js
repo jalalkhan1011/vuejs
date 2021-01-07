@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 // import VueResource from 'vue-resource'
 import VueRouter from 'vue-router'
 import {routes} from './routes'
+import {store} from './store/store'
 
 Vue.use(VueRouter);
 
@@ -14,6 +15,7 @@ Vue.config.productionTip = false
 
 const router = new VueRouter({
   routes,
+
   mode:'history',
   scrollBehavior(to,form){
     console.log(form);
@@ -27,5 +29,6 @@ const router = new VueRouter({
 
 new Vue({
   render: h => h(App),
-  router
+  router,
+  store,
 }).$mount('#app')

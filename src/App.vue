@@ -290,24 +290,48 @@
 <!--}-->
 <!--</script>-->
 //daynamic route
+<!--<template>-->
+<!--  <div class="container">-->
+<!--    <div class="row">-->
+<!--      <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">-->
+<!--        <h2>Routing</h2>-->
+<!--        <hr>-->
+<!--        <compHeader/>-->
+<!--        <router-view></router-view>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</template>-->
+<!--<script>-->
+<!--import compHeader from './Components/Header'-->
+<!--export default {-->
+<!--  components:{-->
+<!--    compHeader-->
+<!--  }-->
+<!--}-->
+<!--</script>-->
+<!--<style></style>-->
+//vueEX
 <template>
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
-        <h2>Routing</h2>
-        <hr>
-        <compHeader/>
-        <router-view></router-view>
-      </div>
-    </div>
+  <div id="app">
+    <compBookListOne></compBookListOne>
+    <compBookListTwo></compBookListTwo>
   </div>
 </template>
+
 <script>
-import compHeader from './Components/Header'
+import compBookListOne from './Components/BookListOne'
+import compBookListTwo from './Components/BookListTwo'
 export default {
+// data(){
+//   return{
+//
+//   }
+// },
   components:{
-    compHeader
+  compBookListOne,
+  compBookListTwo
   }
 }
 </script>
-<style></style>
+<!--<style scoped></style>-->
