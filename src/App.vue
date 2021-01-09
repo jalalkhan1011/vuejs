@@ -316,6 +316,7 @@
   <div id="app">
     <compBookListOne></compBookListOne>
     <compBookListTwo></compBookListTwo>
+    <div class="btn btn-success" @click="reducePrice">Reduce Price</div>
   </div>
 </template>
 
@@ -331,6 +332,11 @@ export default {
   components:{
   compBookListOne,
   compBookListTwo
+  },
+  methods:{
+    reducePrice(){
+      this.$store.commit('reducePrice')
+    }
   }
 }
 </script>
